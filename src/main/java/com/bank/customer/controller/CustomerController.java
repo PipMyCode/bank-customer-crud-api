@@ -3,6 +3,7 @@ package com.bank.customer.controller;
 import com.bank.customer.entity.Customer;
 import java.util.List;
 import com.bank.customer.service.CustomerService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,7 +16,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer createCustomer(@RequestBody Customer customer) {
+    public Customer createCustomer(@Valid @RequestBody Customer customer) {
         return customerService.createCustomer(customer);
     }
 
